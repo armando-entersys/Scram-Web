@@ -1,7 +1,7 @@
 // @type {import('next').NextConfig}
 const nextConfig = {
-  // For Static Export
-    output: 'export',
+  // Para producción con Docker usamos standalone
+  output: 'standalone',
   trailingSlash: true,
   images: {
     unoptimized: true,
