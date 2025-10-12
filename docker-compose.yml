@@ -13,7 +13,7 @@ services:
       - NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=${NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
       - NEXT_PUBLIC_BING_VERIFICATION=${NEXT_PUBLIC_BING_VERIFICATION}
       - NEXT_PUBLIC_YANDEX_VERIFICATION=${NEXT_PUBLIC_YANDEX_VERIFICATION}
-      - NEXT_PUBLIC_SITE_URL=https://scram2k.com
+      - NEXT_PUBLIC_SITE_URL=https://www.scram2k.com
     networks:
       - traefik-public
     labels:
@@ -23,9 +23,9 @@ services:
       - "traefik.http.routers.scram-web.tls=true"
       - "traefik.http.routers.scram-web.tls.certresolver=letsencrypt"
       - "traefik.http.services.scram-web.loadbalancer.server.port=3000"
-      # Redirección de www a no-www
-      - "traefik.http.middlewares.scram-web-redirect.redirectregex.regex=^https://www\\.scram2k\\.com/(.*)"
-      - "traefik.http.middlewares.scram-web-redirect.redirectregex.replacement=https://scram2k.com/$${1}"
+      # Redirección de no-www a www (INVERTIDO)
+      - "traefik.http.middlewares.scram-web-redirect.redirectregex.regex=^https://scram2k\\.com/(.*)"
+      - "traefik.http.middlewares.scram-web-redirect.redirectregex.replacement=https://www.scram2k.com/$${1}"
       - "traefik.http.middlewares.scram-web-redirect.redirectregex.permanent=true"
       - "traefik.http.routers.scram-web.middlewares=scram-web-redirect"
       # Redirección HTTP a HTTPS
