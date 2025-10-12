@@ -1,0 +1,44 @@
+{
+  "name": "startp",
+  "version": "4.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^6.0.0",
+    "@types/aos": "^3.0.7",
+    "@types/react-responsive-masonry": "^2.1.3",
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "next": "^14.2.3",
+    "nextjs-google-analytics": "^2.3.3",
+    "postcss": "^8.4.38",
+    "react": "^18",
+    "react-accessible-accordion": "^5.0.0",
+    "react-dom": "^18",
+    "react-feather": "^2.0.10",
+    "react-ga": "^3.3.1",
+    "react-responsive-masonry": "^2.2.0",
+    "react-tabs": "^6.0.2",
+    "react-waypoint": "^10.3.0",
+    "sharp": "^0.33.3",
+    "smartlook-client": "^10.0.0",
+    "swiper": "^11.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.69",
+    "@types/react-dom": "^18.2.22",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.1.4",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^9.5.14",
+    "typescript": "^5.5.3"
+  }
+}

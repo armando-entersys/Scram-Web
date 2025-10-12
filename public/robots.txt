@@ -1,0 +1,40 @@
+# robots.txt para Scram Consulting
+# Optimizado para motores de búsqueda e IA (Google, Bing, ChatGPT, Claude, Perplexity)
+
+# Acceso general para todos los bots
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /support
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Bots específicos de IA
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Sitemap
+Sitemap: https://www.scram2k.com/sitemap.xml
+Sitemap: https://www.scram2k.com/sitemap-services.xml
+
+# Host
+Host: https://www.scram2k.com

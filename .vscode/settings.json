@@ -1,0 +1,6 @@
+{
+    "wizardCoder.apiEndpoint": "http://localhost:11434/api/generate",
+    "CodeGPT.apiKey": "OpenAI",
+    "CodeGPT.Autocomplete.enabled": false,
+    "CodeGPT.Autocomplete.provider": "CodeGPT Enterprise - Plus"
+}
