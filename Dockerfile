@@ -5,7 +5,8 @@ WORKDIR /app
 
 # Copiar archivos de dependencias
 COPY package.json package-lock.json* ./
-RUN npm ci --only=production
+# Instalar TODAS las dependencias (incluyendo devDependencies) para el build
+RUN npm ci
 
 # Builder stage
 FROM node:20.13.0-alpine3.19 AS builder
