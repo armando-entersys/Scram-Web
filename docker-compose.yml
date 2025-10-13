@@ -35,9 +35,8 @@ services:
       - "traefik.http.middlewares.scram-web-redirect.redirectregex.replacement=https://www.scram2k.com/$${1}"
       - "traefik.http.middlewares.scram-web-redirect.redirectregex.permanent=true"
       # Service definition
-      - "traefik.http.services.scram-web.loadbalancer.server.port=3000"
+      - "traefik.http.services.scram-web.loadbalancer.server.port=80"
       - "traefik.http.services.scram-web.loadbalancer.server.scheme=http"
-      - "traefik.http.services.scram-web.loadbalancer.responseForwarding.flushInterval=100ms"
       # Router HTTP (redirect a HTTPS)
       - "traefik.http.routers.scram-web-http.rule=Host(`scram2k.com`) || Host(`www.scram2k.com`)"
       - "traefik.http.routers.scram-web-http.entrypoints=web"

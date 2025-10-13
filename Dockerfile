@@ -18,8 +18,8 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
 RUN npm run build
 
-# Production image
-FROM node:20.13.0-alpine3.19 AS runner
+# Next.js runner (runs in background)
+FROM node:20.13.0-alpine3.19 AS nextjs-runner
 WORKDIR /app
 
 ENV NODE_ENV production
@@ -37,8 +37,28 @@ COPY --from=builder /app/next.config.mjs ./next.config.mjs
 
 USER nextjs
 
-EXPOSE 3000
+# Production image with NGINX
+FROM nginx:1.25-alpine AS production
 
-ENV PORT 3000
+# Install Node.js to run Next.js
+RUN apk add --no-cache nodejs npm
 
-CMD ["npm", "start"]
+# Copy NGINX configuration
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Create app directory
+WORKDIR /app
+
+# Copy Next.js app from nextjs-runner
+COPY --from=nextjs-runner --chown=nginx:nginx /app /app
+
+# Create startup script
+RUN echo '#!/bin/sh' > /start.sh && \
+    echo 'cd /app' >> /start.sh && \
+    echo 'su -s /bin/sh nginx -c "npm start" &' >> /start.sh && \
+    echo 'nginx -g "daemon off;"' >> /start.sh && \
+    chmod +x /start.sh
+
+EXPOSE 80
+
+CMD ["/start.sh"]
