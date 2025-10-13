@@ -18,32 +18,19 @@ services:
       - traefik-public
     labels:
       - "traefik.enable=true"
-      # Router para www (principal)
-      - "traefik.http.routers.scram-web-www.rule=Host(`www.scram2k.com`)"
-      - "traefik.http.routers.scram-web-www.entrypoints=websecure"
-      - "traefik.http.routers.scram-web-www.tls=true"
-      - "traefik.http.routers.scram-web-www.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.scram-web-www.service=scram-web"
-      # Router para no-www (redirect a www)
-      - "traefik.http.routers.scram-web-nowww.rule=Host(`scram2k.com`)"
-      - "traefik.http.routers.scram-web-nowww.entrypoints=websecure"
-      - "traefik.http.routers.scram-web-nowww.tls=true"
-      - "traefik.http.routers.scram-web-nowww.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.scram-web-nowww.middlewares=scram-web-redirect"
-      # Middleware de redirect no-www a www
-      - "traefik.http.middlewares.scram-web-redirect.redirectregex.regex=^https://scram2k\\.com/(.*)"
-      - "traefik.http.middlewares.scram-web-redirect.redirectregex.replacement=https://www.scram2k.com/$${1}"
-      - "traefik.http.middlewares.scram-web-redirect.redirectregex.permanent=true"
+      # Router HTTP (acepta www y no-www) - con prioridad alta para evitar redirect global
+      - "traefik.http.routers.scram-web.rule=Host(`www.scram2k.com`) || Host(`scram2k.com`)"
+      - "traefik.http.routers.scram-web.entrypoints=web"
+      - "traefik.http.routers.scram-web.priority=100"
+      - "traefik.http.routers.scram-web.service=scram-web"
+      # Middleware para evitar que el redirect global se aplique
+      - "traefik.http.routers.scram-web.middlewares=no-redirect"
+      - "traefik.http.middlewares.no-redirect.headers.customResponseHeaders.X-No-Redirect=true"
       # Service definition
       - "traefik.http.services.scram-web.loadbalancer.server.port=80"
       - "traefik.http.services.scram-web.loadbalancer.server.scheme=http"
-      # Router HTTP (redirect a HTTPS)
-      - "traefik.http.routers.scram-web-http.rule=Host(`scram2k.com`) || Host(`www.scram2k.com`)"
-      - "traefik.http.routers.scram-web-http.entrypoints=web"
-      - "traefik.http.routers.scram-web-http.middlewares=redirect-to-https"
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true"
 
 networks:
   traefik-public:
+    name: traefik
     external: true
