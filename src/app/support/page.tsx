@@ -33,7 +33,7 @@ export default function Page() {
                 <div className="icon">
                 <i className='bx bxl-windows'></i>
                 </div>
-                <h3>Soporte Remoto Windows AD</h3>
+                <h3>Soporte Remoto Windows</h3>
 
                 <Icon.ArrowDownCircle/> <a className="download" href="https://storage.googleapis.com/scram-downloads-1760377889/SoporteScramPC.exe">  SoporteScramPC.exe</a>
               </div>

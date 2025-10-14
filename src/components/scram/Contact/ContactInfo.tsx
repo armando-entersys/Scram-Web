@@ -50,7 +50,7 @@ const ContactInfo = () => {
                 <p>
                 1727 E Tyler Ave, Harlingen, Texas 78550 United States.
                 </p>
-                <a href="tel:+19562540958">+1 956 254 0958</a>
+                <a href="tel:+19569573838">+1 956 957 3838</a>
               </div>
             </div>
 
