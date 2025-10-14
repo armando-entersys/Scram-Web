@@ -33,7 +33,7 @@ const ContactInfo = () => {
                 <p>
                 Pingüicas Lote 16, Manzana 138, Bosques de Morelos, Cuautitlan Izcalli, Edo. de México. C.P. 54760.
                 </p>
-                <a href="tel:+525570279425">+52 55 7027 9425</a>
+                <a href="tel:+525597571609">+52 55 9757 1609</a> <a href="tel:+525597571610">+52 55 9757 1610</a>
               </div>
 
              

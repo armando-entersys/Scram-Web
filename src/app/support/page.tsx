@@ -17,16 +17,7 @@ export default function Page() {
 
       <PageBanner pageTitle="Soporte Scram" />
     <div className="container">
-    <div className="row">
-      <div className="col-lg-4 col-md-6 col-sm-6">
-            <div className="contact-info-box">
-                <div className="icon">
-                <i className='bx bxl-windows'></i>
-                </div>
-                <h3>Soporte Remoto Windows TV</h3>
-                <Icon.ArrowDownCircle/> <a className="download" href="https://storage.googleapis.com/scram-downloads/SoporteScramPC.exe"> SoporteScramPC.exe</a>
-              </div>
-        </div>
+    <div className="row justify-content-center">
         <div className="col-lg-4 col-md-6 col-sm-6">
             <div className="contact-info-box">
                 <div className="icon">
@@ -34,7 +25,7 @@ export default function Page() {
                 </div>
                 <h3>Soporte Remoto Mac</h3>
 
-                <Icon.ArrowDownCircle/> <a className="download" href="https://storage.googleapis.com/scram-downloads/SoporteScramMac.dmg"> SoporteScramMac.dmg</a>
+                <Icon.ArrowDownCircle/> <a className="download" href="https://storage.googleapis.com/scram-downloads-1760377889/SoporteScramMac.dmg"> SoporteScramMac.dmg</a>
               </div>
         </div>
         <div className="col-lg-4 col-md-6 col-sm-6">
@@ -44,7 +35,7 @@ export default function Page() {
                 </div>
                 <h3>Soporte Remoto Windows AD</h3>
 
-                <Icon.ArrowDownCircle/> <a className="download" href="https://storage.googleapis.com/scram-downloads/SoporteScramPC2.exe">  SoporteScramPC2.exe</a>
+                <Icon.ArrowDownCircle/> <a className="download" href="https://storage.googleapis.com/scram-downloads-1760377889/SoporteScramPC.exe">  SoporteScramPC.exe</a>
               </div>
         </div>
         </div>

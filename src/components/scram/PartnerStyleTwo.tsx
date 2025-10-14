@@ -149,6 +149,10 @@ import p35h from "/public/images/scram/partners/nginx.webp";
 import p36 from "/public/images/scram/partners/vmware-a.webp";
 import p36h from "/public/images/scram/partners/vmware.webp";
 
+// schneider
+import p37 from "/public/images/scram/partners/schneider-a.png";
+import p37h from "/public/images/scram/partners/schneider.png";
+
 const partners = [
   { id: 1, image: p1, imageHover: p1h, url: "https://www.anthropic.com", name: "Anthropic" },
   { id: 2, image: p2, imageHover: p2h, url: "https://www.eaton.com", name: "Eaton" },
@@ -185,7 +189,8 @@ const partners = [
   { id: 33, image: p33, imageHover: p33h, url: "https://www.docker.com", name: "Docker" },
   { id: 34, image: p34, imageHover: p34h, url: "https://www.honeywell.com", name: "Honeywell" },
   { id: 35, image: p35, imageHover: p35h, url: "https://www.nginx.com", name: "Nginx" },
-  { id: 36, image: p36, imageHover: p36h, url: "https://www.vmware.com", name: "VMware" }
+  { id: 36, image: p36, imageHover: p36h, url: "https://www.vmware.com", name: "VMware" },
+  { id: 37, image: p37, imageHover: p37h, url: "https://www.se.com", name: "Schneider Electric" }
 ];
 
 const PartnerStyleTwo = () => {

@@ -219,7 +219,7 @@ const FeaturesIndustrial = () => {
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}>
-                <Image src="/images/scram/partners/schneider.webp" alt="Schneider Electric" width={120} height={43} />
+                <Image src="/images/scram/partners/schneider.png" alt="Schneider Electric" width={120} height={43} />
               </div>
             </a>
           </div>
