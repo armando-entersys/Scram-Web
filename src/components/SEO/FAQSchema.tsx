@@ -247,6 +247,98 @@ const FAQSchema: React.FC<FAQSchemaProps> = ({
           </div>
         </section>
       )}
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .faq-section {
+            padding: 50px 0 !important;
+          }
+
+          .faq-section .section-title h2 {
+            font-size: 28px !important;
+          }
+
+          .faq-section .lead-text {
+            font-size: 14px !important;
+          }
+
+          /* FAQ items responsive */
+          .faq-item button {
+            padding: 15px 20px !important;
+            gap: 12px !important;
+          }
+
+          .faq-item button > div {
+            gap: 12px !important;
+          }
+
+          .faq-item button i.bx-help-circle {
+            font-size: 22px !important;
+          }
+
+          .faq-item button h3 {
+            font-size: 15px !important;
+            line-height: 1.4 !important;
+          }
+
+          .faq-item button > i {
+            font-size: 20px !important;
+          }
+
+          /* Respuestas responsive */
+          .faq-item > div > div {
+            padding: 0 20px 15px 54px !important;
+            font-size: 14px !important;
+            line-height: 1.7 !important;
+          }
+
+          /* CTA section mobile */
+          .faq-section .row:last-child {
+            margin-top: 40px !important;
+          }
+
+          .faq-section .row:last-child > div > div {
+            padding: 35px 25px !important;
+          }
+
+          .faq-section .row:last-child h3 {
+            font-size: 24px !important;
+            margin-bottom: 12px !important;
+          }
+
+          .faq-section .row:last-child p:first-of-type {
+            font-size: 15px !important;
+            margin-bottom: 30px !important;
+          }
+
+          /* Botones full width */
+          .faq-section .row:last-child > div > div > div {
+            flex-direction: column !important;
+            gap: 15px !important;
+          }
+
+          .faq-section .row:last-child a {
+            width: 100% !important;
+            padding: 15px 30px !important;
+            font-size: 16px !important;
+            justify-content: center !important;
+          }
+
+          .faq-section .row:last-child a i {
+            font-size: 22px !important;
+          }
+
+          /* Texto final responsive */
+          .faq-section .row:last-child p:last-child {
+            font-size: 14px !important;
+            margin-top: 25px !important;
+          }
+
+          .faq-section .row:last-child p:last-child i {
+            font-size: 18px !important;
+          }
+        }
+      `}</style>
     </>
   );
 };

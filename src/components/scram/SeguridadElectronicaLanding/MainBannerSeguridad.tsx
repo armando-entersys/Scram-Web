@@ -296,13 +296,102 @@ const MainBannerSeguridad = () => {
 
       <style jsx>{`
         @media (max-width: 768px) {
-          .hero-banner-seguridad h1 {
-            font-size: 32px !important;
-          }
-
           .hero-banner-seguridad {
             padding-top: 80px !important;
             padding-bottom: 60px !important;
+          }
+
+          .hero-banner-seguridad h1 {
+            font-size: 28px !important;
+            line-height: 1.3 !important;
+            margin-bottom: 15px !important;
+          }
+
+          .hero-banner-seguridad p {
+            font-size: 16px !important;
+            margin-bottom: 20px !important;
+          }
+
+          /* Ocultar iconos decorativos en mobile */
+          .hero-banner-seguridad > div:first-of-type + div,
+          .hero-banner-seguridad > div:first-of-type + div + div {
+            display: none !important;
+          }
+
+          /* Badge responsive */
+          .hero-banner-seguridad span {
+            font-size: 12px !important;
+            padding: 8px 20px !important;
+          }
+
+          /* Stats más compactos */
+          .hero-banner-seguridad [style*="display: flex"][style*="gap: 30px"] > div {
+            flex: 1 1 auto;
+            text-align: center;
+          }
+
+          .hero-banner-seguridad [style*="display: flex"][style*="gap: 30px"] > div > div:first-child {
+            font-size: 24px !important;
+          }
+
+          .hero-banner-seguridad [style*="display: flex"][style*="gap: 30px"] > div > div:last-child {
+            font-size: 11px !important;
+          }
+
+          /* CTAs full width en mobile */
+          .hero-banner-seguridad [style*="display: flex"][style*="gap: 15px"] {
+            flex-direction: column !important;
+            gap: 12px !important;
+          }
+
+          .hero-banner-seguridad [style*="display: flex"][style*="gap: 15px"] > a,
+          .hero-banner-seguridad [style*="display: flex"][style*="gap: 15px"] > button {
+            width: 100% !important;
+            justify-content: center !important;
+            padding: 14px 25px !important;
+            fontSize: 16px !important;
+          }
+
+          /* Trust badges responsive */
+          .hero-banner-seguridad [style*="borderTop: 1px solid"] {
+            gap: 15px !important;
+            font-size: 12px !important;
+          }
+
+          .hero-banner-seguridad [style*="borderTop: 1px solid"] > div {
+            font-size: 12px !important;
+          }
+
+          /* Card de beneficios en mobile */
+          .hero-banner-seguridad .col-lg-5 > div {
+            margin-top: 30px !important;
+            padding: 25px 20px !important;
+          }
+
+          .hero-banner-seguridad .col-lg-5 h3 {
+            font-size: 20px !important;
+            margin-bottom: 20px !important;
+          }
+
+          .hero-banner-seguridad .col-lg-5 ul li {
+            margin-bottom: 15px !important;
+          }
+
+          .hero-banner-seguridad .col-lg-5 ul li > div:first-child {
+            width: 35px !important;
+            height: 35px !important;
+          }
+
+          .hero-banner-seguridad .col-lg-5 ul li i {
+            font-size: 20px !important;
+          }
+
+          .hero-banner-seguridad .col-lg-5 ul li > div:last-child > div:first-child {
+            font-size: 15px !important;
+          }
+
+          .hero-banner-seguridad .col-lg-5 ul li > div:last-child > div:last-child {
+            font-size: 13px !important;
           }
         }
       `}</style>

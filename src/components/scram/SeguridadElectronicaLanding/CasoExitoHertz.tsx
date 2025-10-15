@@ -4,6 +4,7 @@ import React from "react";
 
 const CasoExitoHertz = () => {
   return (
+    <>
     <section className="case-study-visual ptb-80" style={{ background: '#f8f9fa' }}>
       <div className="container">
         {/* Badge superior */}
@@ -185,6 +186,107 @@ const CasoExitoHertz = () => {
         </div>
       </div>
     </section>
+
+    <style jsx>{`
+      @media (max-width: 768px) {
+        .case-study-visual {
+          padding: 50px 0 !important;
+        }
+
+        /* Badge y títulos */
+        .case-study-visual h2 {
+          font-size: 26px !important;
+          margin-bottom: 12px !important;
+        }
+
+        .case-study-visual > div > div:first-child p {
+          font-size: 15px !important;
+        }
+
+        .case-study-visual > div > div:first-child > div {
+          padding: 8px 20px !important;
+          font-size: 12px !important;
+        }
+
+        .case-study-visual > div > div:first-child > div i {
+          font-size: 20px !important;
+        }
+
+        .case-study-visual > div > div:first-child > div span {
+          font-size: 12px !important;
+        }
+
+        /* Imagen responsive */
+        .case-study-visual .col-lg-6:first-of-type {
+          margin-bottom: 30px !important;
+        }
+
+        /* Badge sobre imagen más pequeño */
+        .case-study-visual img + div {
+          padding: 12px 18px !important;
+          bottom: 15px !important;
+          left: 15px !important;
+        }
+
+        .case-study-visual img + div i {
+          font-size: 22px !important;
+        }
+
+        .case-study-visual img + div > div > div:first-child {
+          font-size: 14px !important;
+        }
+
+        .case-study-visual img + div > div > div:last-child {
+          font-size: 11px !important;
+        }
+
+        /* Métricas más compactas en grid 2x2 */
+        .case-study-visual .col-md-6 {
+          padding: 0 7px !important;
+        }
+
+        .case-study-visual .col-md-6 > div {
+          padding: 20px 15px !important;
+          margin-bottom: 15px !important;
+        }
+
+        .case-study-visual .col-md-6 > div > div:first-child {
+          font-size: 36px !important;
+          margin-bottom: 8px !important;
+        }
+
+        .case-study-visual .col-md-6 p {
+          font-size: 13px !important;
+        }
+
+        /* CTA section responsive */
+        .case-study-visual .row:last-child > div > div {
+          padding: 30px 20px !important;
+        }
+
+        .case-study-visual .row:last-child h3 {
+          font-size: 22px !important;
+          margin-bottom: 12px !important;
+        }
+
+        .case-study-visual .row:last-child p {
+          font-size: 14px !important;
+          margin-bottom: 25px !important;
+        }
+
+        .case-study-visual .row:last-child a {
+          width: 100% !important;
+          padding: 15px 30px !important;
+          font-size: 16px !important;
+          justify-content: center !important;
+        }
+
+        .case-study-visual .row:last-child a i {
+          font-size: 22px !important;
+        }
+      }
+    `}</style>
+    </>
   );
 };
 
