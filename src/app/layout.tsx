@@ -18,11 +18,10 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 
 import GoTop from "@/components/scram/Layout/GoTop";
-import ClientScripts from "@/components/scram/Layout/ClientScripts";
+import AosAnimation from "@/components/scram/Layout/AosAnimation";
 import GlobalSchemas from "@/components/scram/SEO/SchemaOrg";
 import { SITE_CONFIG, ROBOTS_CONFIG } from "@/config/seo";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-import { GA_MEASUREMENT_ID } from "@/config/analytics";
+import AnalyticsProvider from "@/components/Analytics/AnalyticsProvider";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -110,9 +109,10 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         <GlobalSchemas />
       </head>
       <body className={poppins.className}>
-        <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
-        {children}
-        <ClientScripts />
+        <AnalyticsProvider>
+          {children}
+          <AosAnimation />
+        </AnalyticsProvider>
       </body>
     </html>
   );

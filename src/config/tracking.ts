@@ -2,9 +2,14 @@
 // Configuración centralizada de todas las herramientas de tracking
 
 export const trackingConfig = {
-  // Google Analytics 4
+  // Google Analytics 4 - Usa NEXT_PUBLIC_GA_ID del .env
   googleAnalytics: {
-    measurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-ZJ0CTKBKNP',
+    measurementId: process.env.NEXT_PUBLIC_GA_ID || 'G-B3RZRYRWWW',
+  },
+
+  // Google Tag Manager - Usa NEXT_PUBLIC_GTM_ID del .env
+  googleTagManager: {
+    containerId: process.env.NEXT_PUBLIC_GTM_ID || 'GTM-M8NP53HC',
   },
 
   // Google Ads
@@ -34,6 +39,7 @@ export const trackingConfig = {
   // WhatsApp Business
   whatsapp: {
     number: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '529993882606',
+    defaultMessage: process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE || 'Hola, me gustaría obtener más información sobre sus servicios.',
   },
 
   // Smartlook IDs por landing page
@@ -53,4 +59,11 @@ export const isTrackingEnabled = () => {
 export const getAnalyzeeUrl = (pageId?: string) => {
   const id = pageId || trackingConfig.analyzee.main;
   return `https://cdn.analyzee.io/sdk/${id}.js`;
+};
+
+// Helper para generar URL de WhatsApp
+export const getWhatsAppUrl = (message?: string, phone?: string) => {
+  const phoneNumber = (phone || trackingConfig.whatsapp.number).replace(/\D/g, '');
+  const encodedMessage = encodeURIComponent(message || trackingConfig.whatsapp.defaultMessage);
+  return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 };
