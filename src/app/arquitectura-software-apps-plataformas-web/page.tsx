@@ -7,6 +7,9 @@ import FeaturesArquitectura from '@/components/scram/ArquitecturaLanding/Feature
 import Partners from '@/components/scram/PartnerStyleTwo';
 import { ServiceSchema, BreadcrumbSchema } from "@/components/scram/SEO/SchemaOrg";
 import { SERVICES_SEO, SITE_CONFIG } from "@/config/seo";
+import EnhancedSEO from "@/components/SEO/EnhancedSEO";
+import FAQSchema from "@/components/SEO/FAQSchema";
+import { desarrolloSoftwareServices, desarrolloSoftwareFAQs, organizationData } from "@/config/siteData";
 import Script from "next/script";
 
 // SEO Metadata optimizado para IA y CTR
@@ -44,7 +47,31 @@ export const metadata: Metadata = {
 const Page: React.FC = () => {
   return (
     <>
-      {/* Schema.org para SEO */}
+      {/* Enhanced SEO for AI Crawlers */}
+      <EnhancedSEO
+        pageType="service"
+        title="Desarrollo de Software Empresarial a la Medida"
+        description="Desarrollamos aplicaciones web, móviles y sistemas ERP personalizados para empresas. Tecnología: Laravel, React, Next.js, Flutter. Clientes: FEMSA, Grupo Modelo, Chedraui. Más de 25 años de experiencia."
+        url="https://www.scram2k.com/arquitectura-software-apps-plataformas-web"
+        imageUrl="https://www.scram2k.com/images/scram/servicios/arquitectura-de-software.webp"
+        services={desarrolloSoftwareServices}
+        faqs={desarrolloSoftwareFAQs}
+        breadcrumbs={[
+          { name: "Servicios", url: "https://www.scram2k.com/#servicios" },
+          { name: "Desarrollo de Software", url: "https://www.scram2k.com/arquitectura-software-apps-plataformas-web" }
+        ]}
+        rating={organizationData.rating}
+        certifications={organizationData.certifications}
+        features={[
+          "Metodología Agile con sprints de 2 semanas",
+          "Entregas incrementales para validación continua",
+          "Código limpio y documentado",
+          "Integración con APIs y microservicios",
+          "Arquitectura cloud (AWS, Azure, Google Cloud)"
+        ]}
+      />
+
+      {/* Schema.org para SEO (legacy - mantener por compatibilidad) */}
       <ServiceSchema
         name="Arquitectura de Software, Apps y Plataformas Web"
         description="Desarrollo de aplicaciones empresariales escalables y seguras con tecnología de clase mundial. Clientes: FEMSA, Grupo Modelo, Chedraui"
@@ -76,6 +103,15 @@ const Page: React.FC = () => {
       <br />
       <FeaturesArquitectura />
       <br />
+
+      {/* FAQ Section for AI Optimization */}
+      <FAQSchema
+        faqs={desarrolloSoftwareFAQs}
+        title="Preguntas Frecuentes - Desarrollo de Software"
+        description="Respuestas a las preguntas más comunes sobre desarrollo de aplicaciones web y móviles"
+        showVisual={true}
+      />
+
       <Footer />
     </>
   );

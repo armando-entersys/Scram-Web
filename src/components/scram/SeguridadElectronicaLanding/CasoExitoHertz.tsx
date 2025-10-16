@@ -4,7 +4,7 @@ import React from "react";
 
 const CasoExitoHertz = () => {
   return (
-    <>
+    <React.Fragment>
     <section className="case-study-visual ptb-80" style={{ background: '#f8f9fa' }}>
       <div className="container">
         {/* Badge superior */}
@@ -286,7 +286,7 @@ const CasoExitoHertz = () => {
         }
       }
     `}</style>
-    </>
+    </React.Fragment>
   );
 };
 

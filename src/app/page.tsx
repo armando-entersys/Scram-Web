@@ -11,6 +11,9 @@ import Partner from "../components/scram/Partner";
 import BlogPost from "../components/scram/Common/BlogPost";
 import Footer from "../components/scram/Layout/Footer";
 import Script from "next/script";
+import EnhancedSEO from "@/components/SEO/EnhancedSEO";
+import FAQSchema from "@/components/SEO/FAQSchema";
+import { homepageFAQs, organizationData } from "@/config/siteData";
 
 export const metadata = {
   title: 'Scram Consulting - Proveedor de Soluciones IT & Marketing',
@@ -21,6 +24,25 @@ export default function Home() {
 
   return (
     <>
+    {/* Enhanced SEO for AI Crawlers */}
+    <EnhancedSEO
+      pageType="about"
+      title="SCRAM Consulting - Soluciones IT Integrales desde 1997"
+      description="Proveedor líder de soluciones IT en México y Estados Unidos. Desarrollo de software, ciberseguridad, infraestructura, hardware industrial y soporte técnico 24/7. Más de 25 años de experiencia con clientes como FEMSA, Grupo Modelo y Chedraui."
+      url="https://www.scram2k.com"
+      imageUrl="https://www.scram2k.com/images/scram/logo.png"
+      faqs={homepageFAQs}
+      rating={organizationData.rating}
+      certifications={organizationData.certifications}
+      features={[
+        "25+ años de experiencia",
+        "500+ proyectos completados",
+        "Soporte técnico 24/7",
+        "Presencia en México y Estados Unidos",
+        "Tiempo de respuesta < 2 horas"
+      ]}
+    />
+
     <Script
         strategy="beforeInteractive"
         id="analyzeeprincipal"
@@ -40,7 +62,7 @@ export default function Home() {
 
       { /*<OurFeatures />*/ }
 
-     
+
 
       <FunFactsArea />
       <Partner />
@@ -50,10 +72,18 @@ export default function Home() {
 
       { /*<Feedback /> */ }
 
-     
+
 
       { /*<BlogPost />*/ }
       <Team />
+
+      {/* FAQ Section for AI Optimization */}
+      <FAQSchema
+        faqs={homepageFAQs}
+        title="Preguntas Frecuentes"
+        description="Respuestas rápidas a las preguntas más comunes sobre SCRAM Consulting y nuestros servicios"
+        showVisual={true}
+      />
 
       <Footer />
     </>

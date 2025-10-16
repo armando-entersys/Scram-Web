@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Read(//c/Users/Usuario/Mi unidad/SCRAM Servicios/Marketing SCRAM/Web/Landing ADS - Trafico Soluciones de seguridad electrónica/**)"
     ],
     "deny": [],
     "ask": []
