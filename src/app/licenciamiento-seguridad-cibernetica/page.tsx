@@ -9,8 +9,8 @@ import { ServiceSchema, BreadcrumbSchema } from "@/components/scram/SEO/SchemaOr
 import { SERVICES_SEO, SITE_CONFIG } from "@/config/seo";
 import EnhancedSEO from "@/components/SEO/EnhancedSEO";
 import FAQSchema from "@/components/SEO/FAQSchema";
+import AnalyzeeScript from "@/components/Analytics/AnalyzeeScript";
 import { ciberseguridadServices, ciberseguridadFAQs, organizationData } from "@/config/siteData";
-import Script from "next/script";
 
 // SEO Metadata optimizado para IA y CTR
 export const metadata: Metadata = {
@@ -88,13 +88,8 @@ const Page: React.FC = () => {
         ]}
       />
 
-      <Script
-        strategy="beforeInteractive"
-        async
-        id="analyzeeprincipal"
-        src="https://cdn.analyzee.io/sdk/WJ9shmvFDGySBxuQvEoh.js"
-        dangerouslySetInnerHTML={{ __html: '' }}
-      />
+      {/* Analytics Script - Solo en producción */}
+      <AnalyzeeScript />
 
       <Navbar />
       <br /><br /><br /><br /><br />

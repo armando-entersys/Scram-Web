@@ -10,7 +10,6 @@ import Feedback from "../components/scram/Feedback";
 import Partner from "../components/scram/Partner";
 import BlogPost from "../components/scram/Common/BlogPost";
 import Footer from "../components/scram/Layout/Footer";
-import Script from "next/script";
 import EnhancedSEO from "@/components/SEO/EnhancedSEO";
 import FAQSchema from "@/components/SEO/FAQSchema";
 import { homepageFAQs, organizationData } from "@/config/siteData";
@@ -43,13 +42,9 @@ export default function Home() {
       ]}
     />
 
-    <Script
-        strategy="beforeInteractive"
-        id="analyzeeprincipal"
-        async
-        src="https://cdn.analyzee.io/sdk/WJ9shmvFDGySBxuQvEoh.js"
-        dangerouslySetInnerHTML={{ __html: '' }}
-      />
+    {/* Analytics Script - Solo en producción */}
+      <AnalyzeeScript />
+
       <Navbar />
 
       <MainBanner />
