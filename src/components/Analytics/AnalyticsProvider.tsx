@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import Script from 'next/script';
 import { trackingConfig } from '@/config/tracking';
 import { analytics } from '@/lib/analytics';
+import { advancedAnalytics } from '@/lib/analytics-advanced';
 
 interface AnalyticsProviderProps {
   children?: React.ReactNode;
@@ -30,6 +31,18 @@ export default function AnalyticsProvider({
   // Inicializar analytics cuando el componente se monta
   useEffect(() => {
     analytics.initialize();
+
+    // Inicializar analytics avanzado en producción
+    if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
+      advancedAnalytics.initialize();
+    }
+
+    // Cleanup al desmontar
+    return () => {
+      if (typeof window !== 'undefined') {
+        advancedAnalytics.cleanup();
+      }
+    };
   }, []);
 
   return (
