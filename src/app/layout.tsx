@@ -103,18 +103,35 @@ interface RootLayoutProps {
 }
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
-  // Solo cargar Analyzee en producción
+  // Solo cargar analytics en producción
   const isProduction = process.env.NODE_ENV === 'production';
   const analyzeeProjectId = process.env.NEXT_PUBLIC_ANALYZEE_PROJECT_ID || 'lpN2yQcxDRgaxK4iwHU1';
+  const smartlookKey = process.env.NEXT_PUBLIC_SMARTLOOK_KEY;
 
   return (
     <html lang="es-MX">
       <head>
         <GlobalSchemas />
+        {/* Analyzee Analytics */}
         {isProduction && (
           <script
             async
             src={`https://cdn.analyzee.io/sdk/${analyzeeProjectId}.js`}
+          />
+        )}
+        {/* Smartlook Session Recording */}
+        {isProduction && smartlookKey && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.smartlook||(function(d) {
+                  var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+                  var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+                  c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+                })(document);
+                smartlook('init', '${smartlookKey}', { region: 'eu' });
+              `,
+            }}
           />
         )}
       </head>
