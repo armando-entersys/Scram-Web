@@ -103,10 +103,20 @@ interface RootLayoutProps {
 }
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
+  // Solo cargar Analyzee en producción
+  const isProduction = process.env.NODE_ENV === 'production';
+  const analyzeeProjectId = process.env.NEXT_PUBLIC_ANALYZEE_PROJECT_ID || 'lpN2yQcxDRgaxK4iwHU1';
+
   return (
     <html lang="es-MX">
       <head>
         <GlobalSchemas />
+        {isProduction && (
+          <script
+            async
+            src={`https://cdn.analyzee.io/sdk/${analyzeeProjectId}.js`}
+          />
+        )}
       </head>
       <body className={poppins.className}>
         <AnalyticsProvider>

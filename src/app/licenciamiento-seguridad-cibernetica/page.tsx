@@ -9,7 +9,6 @@ import { ServiceSchema, BreadcrumbSchema } from "@/components/scram/SEO/SchemaOr
 import { SERVICES_SEO, SITE_CONFIG } from "@/config/seo";
 import EnhancedSEO from "@/components/SEO/EnhancedSEO";
 import FAQSchema from "@/components/SEO/FAQSchema";
-import AnalyzeeScript from "@/components/Analytics/AnalyzeeScript";
 import { ciberseguridadServices, ciberseguridadFAQs, organizationData } from "@/config/siteData";
 
 // SEO Metadata optimizado para IA y CTR
@@ -87,9 +86,6 @@ const Page: React.FC = () => {
           { name: "Licenciamiento y Ciberseguridad", url: "/licenciamiento-seguridad-cibernetica" }
         ]}
       />
-
-      {/* Analytics Script - Solo en producción */}
-      <AnalyzeeScript />
 
       <Navbar />
       <br /><br /><br /><br /><br />

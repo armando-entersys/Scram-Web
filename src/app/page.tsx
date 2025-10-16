@@ -12,7 +12,6 @@ import BlogPost from "../components/scram/Common/BlogPost";
 import Footer from "../components/scram/Layout/Footer";
 import EnhancedSEO from "@/components/SEO/EnhancedSEO";
 import FAQSchema from "@/components/SEO/FAQSchema";
-import AnalyzeeScript from "@/components/Analytics/AnalyzeeScript";
 import { homepageFAQs, organizationData } from "@/config/siteData";
 
 export const metadata = {
@@ -42,9 +41,6 @@ export default function Home() {
         "Tiempo de respuesta < 2 horas"
       ]}
     />
-
-    {/* Analytics Script - Solo en producción */}
-      <AnalyzeeScript />
 
       <Navbar />
 
