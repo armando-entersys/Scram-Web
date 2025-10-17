@@ -22,6 +22,7 @@ import AosAnimation from "@/components/scram/Layout/AosAnimation";
 import GlobalSchemas from "@/components/scram/SEO/SchemaOrg";
 import { SITE_CONFIG, ROBOTS_CONFIG } from "@/config/seo";
 import AnalyticsProvider from "@/components/Analytics/AnalyticsProvider";
+import VersionChecker from "@/components/VersionChecker";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -136,6 +137,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         )}
       </head>
       <body className={poppins.className}>
+        <VersionChecker />
         <AnalyticsProvider>
           {children}
           <AosAnimation />
