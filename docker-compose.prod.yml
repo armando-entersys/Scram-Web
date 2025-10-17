@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  scram-frontend:
+    image: scram-frontend:latest
+    container_name: scram-frontend-container
+    restart: unless-stopped
+    env_file:
+      - .env.production
+    networks:
+      - traefik-public
+    labels:
+      # Enable Traefik
+      - 'traefik.enable=true'
+
+      # Main domain HTTPS router
+      - 'traefik.http.routers.scram-frontend.rule=Host(`www.scram2k.com`) || Host(`scram2k.com`)'
+      - 'traefik.http.routers.scram-frontend.entrypoints=websecure'
+      - 'traefik.http.routers.scram-frontend.tls.certresolver=letsencrypt'
+      - 'traefik.http.routers.scram-frontend.priority=100'
+
+      # Main domain HTTP router (redirect to HTTPS)
+      - 'traefik.http.routers.scram-frontend-http.rule=Host(`www.scram2k.com`) || Host(`scram2k.com`)'
+      - 'traefik.http.routers.scram-frontend-http.entrypoints=web'
+      - 'traefik.http.routers.scram-frontend-http.priority=100'
+
+      # Subdomain HTTPS router (for ads landing)
+      - 'traefik.http.routers.scram-ads-subdomain.rule=Host(`seguridad-electronica.scram2k.com`)'
+      - 'traefik.http.routers.scram-ads-subdomain.entrypoints=websecure'
+      - 'traefik.http.routers.scram-ads-subdomain.tls.certresolver=letsencrypt'
+      - 'traefik.http.routers.scram-ads-subdomain.priority=200'
+
+      # Subdomain HTTP router (redirect to HTTPS)
+      - 'traefik.http.routers.scram-ads-subdomain-http.rule=Host(`seguridad-electronica.scram2k.com`)'
+      - 'traefik.http.routers.scram-ads-subdomain-http.entrypoints=web'
+      - 'traefik.http.routers.scram-ads-subdomain-http.priority=200'
+
+      # Service definition (same service for all routers)
+      - 'traefik.http.services.scram-frontend.loadbalancer.server.port=3000'
+
+networks:
+  traefik-public:
+    external: true
