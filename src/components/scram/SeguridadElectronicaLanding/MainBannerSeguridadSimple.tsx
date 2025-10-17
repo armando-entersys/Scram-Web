@@ -2,9 +2,6 @@ import React from "react"
 import Image from "next/image"
 
 import bannerImg from "/public/images/scram/servicios/cctv.webp"
-import repairShape1 from "/public/images/scram/banner/shape1.webp"
-import repairShape2 from "/public/images/scram/banner/shape2.webp"
-import shapeCircle from "/public/images/scram/banner/repair-shape-circle.webp"
 import ButtonWhatsapp from "../Layout/ButtonWhatsapp"
 
 const MainBannerSeguridadSimple = () => {
@@ -40,30 +37,7 @@ const MainBannerSeguridadSimple = () => {
                 alt="Seguridad Electrónica"
                 width={460}
                 height={395}
-              />
-
-              <Image
-                src={repairShape1}
-                className="animate__animated animate__zoomIn animate__delay-0.9s"
-                alt="shape"
-                width={496}
-                height={473}
-              />
-
-              <Image
-                src={repairShape2}
-                className="animate__animated animate__fadeInLeft animate__delay-0.9s"
-                alt="shape"
-                width={533}
-                height={531}
-              />
-
-              <Image
-                src={shapeCircle}
-                className="rotateme"
-                alt="shape"
-                width={494}
-                height={446}
+                priority
               />
             </div>
           </div>
