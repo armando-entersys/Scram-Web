@@ -78,7 +78,7 @@ const MainBannerSeguridad = () => {
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text'
                 }}>
-                  Inteligencia Artificial
+                  Videovigilancia Impulsada por IA
                 </span>
               </h1>
 
