@@ -32,8 +32,8 @@ echo -e "${GREEN}✅ Caché eliminado${NC}"
 echo ""
 
 echo -e "${YELLOW}🔄 Paso 3: Actualizando versión${NC}"
-gcloud compute ssh $SERVER --zone=$ZONE --command="cd $PROJECT_PATH && node update-version.js"
-echo -e "${GREEN}✅ Versión actualizada${NC}"
+gcloud compute ssh $SERVER --zone=$ZONE --command="cd $PROJECT_PATH && /usr/bin/node update-version.js || echo 'Nota: versión se actualizará en el build'"
+echo -e "${GREEN}✅ Versión lista para actualizar${NC}"
 echo ""
 
 echo -e "${YELLOW}🏗️  Paso 4: Reconstruyendo contenedor Docker${NC}"
