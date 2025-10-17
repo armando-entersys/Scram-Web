@@ -194,11 +194,13 @@ const FAQSchema: React.FC<FAQSchemaProps> = ({
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.transform = 'translateY(-3px)';
-                        e.currentTarget.style.boxShadow = '0 8px 25px rgba(37,211,102,0.45)';
+                        e.currentTarget.style.boxShadow = '0 12px 35px rgba(37,211,102,0.5)';
+                        e.currentTarget.style.backgroundColor = '#20c258';
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.transform = 'translateY(0)';
                         e.currentTarget.style.boxShadow = '0 6px 20px rgba(37,211,102,0.35)';
+                        e.currentTarget.style.backgroundColor = '#25D366';
                       }}
                     >
                       <i className="bx bxl-whatsapp bx-tada" style={{ fontSize: '26px' }}></i>
@@ -223,14 +225,16 @@ const FAQSchema: React.FC<FAQSchemaProps> = ({
                         textDecoration: 'none'
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-3px)';
-                        e.currentTarget.style.boxShadow = '0 8px 25px rgba(255,255,255,0.35)';
-                        e.currentTarget.style.backgroundColor = '#fff5e6';
+                        e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
+                        e.currentTarget.style.boxShadow = '0 12px 35px rgba(255,255,255,0.45)';
+                        e.currentTarget.style.backgroundColor = '#fef3e7';
+                        e.currentTarget.style.borderColor = '#fef3e7';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.transform = 'translateY(0) scale(1)';
                         e.currentTarget.style.boxShadow = '0 6px 20px rgba(255,255,255,0.25)';
                         e.currentTarget.style.backgroundColor = '#ffffff';
+                        e.currentTarget.style.borderColor = '#ffffff';
                       }}
                     >
                       <i className="bx bx-phone-call bx-burst" style={{ fontSize: '26px' }}></i>
