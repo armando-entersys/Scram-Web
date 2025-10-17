@@ -256,6 +256,7 @@ export const LANDINGS_CONFIG: Record<string, LandingConfig> = {
       'instalación CCTV industrial'
     ],
     robots: 'noindex',
+    analyzeeId: 'lpN2yQcxDRgaxK4iwHU1',
     conversionLabel: '73OWCNeAmNQZELjP9cQD',
     whatsappMessage: 'Hola, me interesa un diagnóstico gratuito de seguridad electrónica para mi empresa',
     whatsappClickEvent: 'whatsapp_ads_seguridad',
