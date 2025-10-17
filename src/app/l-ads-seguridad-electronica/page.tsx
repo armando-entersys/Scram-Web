@@ -12,6 +12,7 @@ import PlyrVideo from "@/components/scram/Layout/PlyrVideo";
 import Gallery1 from "@/components/scram/Gallery1";
 import FAQSchema from "@/components/SEO/FAQSchema";
 import CasoExitoHertz from "@/components/scram/SeguridadElectronicaLanding/CasoExitoHertz";
+import GeoBanner from "@/components/scram/SeguridadElectronicaLanding/GeoBanner";
 import { getLandingConfig } from "@/config/landings";
 
 const LANDING_SLUG = 'l-ads-seguridad-electronica';
@@ -89,6 +90,9 @@ const Page: React.FC = () => {
 
   return (
     <LandingLayout landingSlug={LANDING_SLUG}>
+      {/* Geo Banner - Solo para visitantes en zona de servicio */}
+      <GeoBanner />
+
       {/* 1. Hero Banner con CTA principal */}
       <MainBannerSeguridad />
 
