@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import Navbar from "@/components/scram/Layout/Navbar";
 import Footer from "@/components/scram/Layout/Footer";
-import MainBannerSeguridad from '@/components/scram/SeguridadElectronicaLanding/MainBannerSeguridad';
+import MainBannerSeguridadSimple from '@/components/scram/SeguridadElectronicaLanding/MainBannerSeguridadSimple';
 import FeaturesSeguridad from '@/components/scram/SeguridadElectronicaLanding/FeaturesSeguridad';
 import Partners from '@/components/scram/PartnerStyleTwo';
 import { ServiceSchema, BreadcrumbSchema } from "@/components/scram/SEO/SchemaOrg";
@@ -70,7 +70,7 @@ const Page: React.FC = () => {
 
       <Navbar />
       <br /><br /><br /><br /><br />
-      <MainBannerSeguridad />
+      <MainBannerSeguridadSimple />
       <br />
       <Partners />
       <br />
